@@ -1,0 +1,1 @@
+select *FROM {{ source('public','pride_left') }}
