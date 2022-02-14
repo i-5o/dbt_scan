@@ -1,4 +1,4 @@
----add utc_timestamps column and convert it to Eastern timezone---
+---add utc_timestamps column and convert it to Eastern timezone----
 with cte as (SELECT 
              scanned_at,
              date_trunc('minute',scanned_at +interval '90' second) as utc_timestamps,
