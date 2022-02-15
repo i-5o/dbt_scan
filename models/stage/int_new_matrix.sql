@@ -1,7 +1,6 @@
----add utc_timestamps column and convert it to Eastern timezone---
+---add utc_timestamps column and convert it to Eastern timezone----
 with cte as (SELECT 
              scanned_at,
-             date_trunc('minute',scanned_at +interval '90' second) as utc_timestamps,
              station_id,
              assignment_id,
              part_number
@@ -26,5 +25,7 @@ with cte as (SELECT
                                      'ST-TWBLT-QL-R',
                                      'ST-ULS4042000-Q' ))
 select *,
-      convert_timezone('UTC','America/New_York',utc_timestamps) AS local_Timestamp
+      convert_timezone('UTC','America/New_York',scanned_at) AS local_Timestamp,
+      date_trunc('minute',dateadd(second,'60',local_Timestamp)) as added_time
+
 from cte
