@@ -1,3 +1,4 @@
+----joned table--
 with cte as (select m.station_id,
                     m.scanned_at,
                     m.local_timestamp,
