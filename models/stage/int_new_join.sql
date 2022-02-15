@@ -2,8 +2,6 @@
 with cte as (select m.station_id,
                     m.scanned_at,
                     m.local_timestamp,
-                    m.added_time,
-                    q.detected_timestamp,
                     m.assignment_id,
                     m.part_number,
                     q.part_detected 
