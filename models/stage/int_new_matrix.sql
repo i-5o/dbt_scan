@@ -26,6 +26,6 @@ with cte as (SELECT
                                      'ST-ULS4042000-Q' ))
 select *,
       convert_timezone('UTC','America/New_York',scanned_at) AS local_Timestamp,
-      date_trunc('minute',dateadd(second,'60',local_Timestamp)) as added_time
+      date_trunc('minute',dateadd(second,'80',local_Timestamp)) as added_time
 
 from cte

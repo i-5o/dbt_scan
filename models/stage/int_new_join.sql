@@ -12,5 +12,5 @@ ON
     m.added_time=q.detected_timestamp
     and m.part_number=q.part_detected
 order by m.added_time desc)
-select * from cte   
+select * from cte  order by local_timestamp desc  
 
